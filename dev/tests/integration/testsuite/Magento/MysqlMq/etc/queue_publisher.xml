@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/publisher.xsd">
+    <publisher topic="demo-publisher-1">
+        <connection name="db" exchange="magento" />
+    </publisher>
+    <publisher topic="demo-publisher-2">
+        <connection name="db" exchange="magento" />
+    </publisher>
+    <publisher topic="test-publisher-1">
+        <connection name="amqp" exchange="magento" />
+    </publisher>
+    <publisher topic="test-publisher-1">
+        <connection name="amqp" exchange="test-exchange-1" />
+    </publisher>
+</config>

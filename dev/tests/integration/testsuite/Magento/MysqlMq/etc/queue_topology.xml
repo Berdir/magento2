@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
+    <exchange name="magento" type="topic" connection="db">
+        <binding id="yellowcube.sync" topic="yellowcube.sync" destinationType="queue" destination="yellowcube.sync"/>
+        <binding id="demo-queue-1" destination="demo-queue-1" destinationType="queue" topic="demo.object.created"/>
+        <binding id="demo-queue-2" destination="demo-queue-2" destinationType="queue" topic="demo.object.created"/>
+        <binding id="demo-queue-3" destination="demo-queue-2" destinationType="queue" topic="demo.object.updated"/>
+        <binding id="demo-queue-3-wildcard" destination="demo-queue-3" destinationType="queue" topic="demo.object.*"/>
+        <binding id="demo-queue-5" destination="demo-queue-5" destinationType="queue" topic="demo.object.#"/>
+    
+        <binding id="demo-queue-6" destination="demo-queue-6" destinationType="queue" topic="test.schema.defined.by.method"/>
+    
+        <binding id="test-queue-created" destination="test-queue-1" destinationType="queue" topic="customer.created"/>
+        <binding id="test-queue-created-one" destination="test-queue-1" destinationType="queue" topic="customer.created.one"/>
+        <binding id="test-queue-created-one-two" destination="test-queue-1" destinationType="queue" topic="customer.created.one.two"/>
+        <binding id="test-queue-created-two" destination="test-queue-1" destinationType="queue" topic="customer.created.two"/>
+        <binding id="test-queue-updated" destination="test-queue-1" destinationType="queue" topic="customer.updated"/>
+        <binding id="test-queue-2-created" destination="test-queue-2" destinationType="queue" topic="customer.created"/>
+        <binding id="test-queue-2-deleted" destination="test-queue-2" destinationType="queue" topic="customer.deleted"/>
+        <binding id="test-queue-3" destination="test-queue-3" destinationType="queue" topic="cart.created"/>
+        <binding id="test-queue-3-one" destination="test-queue-3" destinationType="queue" topic="cart.created.one"/>
+        <binding id="test-queue-4" destination="test-queue-4" destinationType="queue" topic="customer.*"/>
+        <binding id="test-queue-5" destination="test-queue-5" destinationType="queue" topic="customer.#"/>
+        <binding id="test-queue-7" destination="test-queue-7" destinationType="queue" topic="*.created.*"/>
+        <binding id="test-queue-8" destination="test-queue-8" destinationType="queue" topic="*.created.#"/>
+        <binding id="test-queue-9" destination="test-queue-9" destinationType="queue" topic="#"/>
+    </exchange>
+
+    <exchange name="test-exchange-1" type="topic" connection="db">
+        <binding id="test-queue-3-test" destination="test-queue-3" destinationType="queue" topic="cart.created"/>
+        <binding id="test-queue-1-test" destination="test-queue-1" destinationType="queue" topic="cart.created"/>
+    </exchange>
+</config>

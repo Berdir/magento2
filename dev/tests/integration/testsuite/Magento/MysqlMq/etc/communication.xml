@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
+    <topic name="demo.object.created" request="Magento\MysqlMq\Model\DataObject"/>
+    <topic name="demo.object.updated" request="Magento\MysqlMq\Model\DataObject"/>
+    <topic name="demo.object.custom.created" request="Magento\MysqlMq\Model\DataObject"/>
+
+    <topic name="test.schema.defined.by.method" request="Magento\MysqlMq\Model\DataObjectRepository::delayedOperation"/>
+
+    <topic name="customer.created" request="Magento\Customer\Api\Data\CustomerInterface"/>
+    <topic name="customer.created.one" request="Magento\Customer\Api\Data\CustomerInterface"/>
+    <topic name="customer.created.one.two" request="Magento\Customer\Api\Data\CustomerInterface"/>
+    <topic name="customer.created.two" request="Magento\Customer\Api\Data\CustomerInterface"/>
+    <topic name="customer.updated" request="Magento\Customer\Api\Data\CustomerInterface"/>
+    <topic name="customer.deleted" request="Magento\Customer\Api\Data\CustomerInterface"/>
+    <topic name="cart.created" request="Magento\Quote\Api\Data\CartInterface"/>
+    <topic name="cart.created.one" request="Magento\Quote\Api\Data\CartInterface"/>
+
+</config>

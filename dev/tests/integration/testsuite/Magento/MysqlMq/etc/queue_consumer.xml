@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
+    <consumer name="demoConsumerQueueOne" queue="demo-queue-1" connection="db" consumerInstance="Magento\Framework\MessageQueue\Consumer" handler="\Magento\MysqlMq\Model\Processor::processMessage"/>
+    <consumer name="demoConsumerQueueOneWithException" queue="demo-queue-1" connection="db" consumerInstance="Magento\Framework\MessageQueue\Consumer" handler="\Magento\MysqlMq\Model\Processor::processMessageWithException"/>
+    <consumer name="demoConsumerQueueTwo" queue="demo-queue-2" connection="db" consumerInstance="Magento\Framework\MessageQueue\Consumer" handler="\Magento\MysqlMq\Model\Processor::processMessage"/>
+    <consumer name="demoConsumerQueueThree" queue="demo-queue-3" connection="db" consumerInstance="Magento\Framework\MessageQueue\Consumer" handler="\Magento\MysqlMq\Model\Processor::processMessage"/>
+    <consumer name="demoConsumerQueueFour" queue="demo-queue-4" connection="db" consumerInstance="Magento\Framework\MessageQueue\Consumer" handler="\Magento\MysqlMq\Model\Processor::processMessage"/>
+    <consumer name="demoConsumerQueueFive" queue="demo-queue-5" connection="db" consumerInstance="Magento\Framework\MessageQueue\Consumer" handler="\Magento\MysqlMq\Model\Processor::processMessage"/>
+
+    <consumer name="customerCreatedListener" queue="test-queue-1" connection="amqp" consumerInstance="Magento\Framework\MessageQueue\Consumer" handler="\Magento\MysqlMq\Model\Processor::processMessage"/>
+    <consumer name="customerDeletedListener" queue="test-queue-2" connection="db" consumerInstance="Magento\Framework\MessageQueue\Consumer" handler="\Magento\MysqlMq\Model\Processor::processMessage" max_messages="98765"/>
+    <consumer name="cartCreatedListener" queue="test-queue-3" connection="amqp" consumerInstance="Magento\Framework\MessageQueue\Consumer" handler="\Magento\MysqlMq\Model\Processor::processMessage"/>
+
+    <consumer name="delayedOperationConsumer" queue="demo-queue-6" connection="db" consumerInstance="Magento\Framework\MessageQueue\Consumer" handler="Magento\MysqlMq\Model\DataObjectRepository::delayedOperation"/>
+
+</config>

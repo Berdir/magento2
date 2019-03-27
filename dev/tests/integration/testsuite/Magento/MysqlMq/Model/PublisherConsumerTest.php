@@ -28,7 +28,6 @@ class PublisherConsumerTest extends \PHPUnit\Framework\TestCase
 
     protected function setUp()
     {
-        $this->markTestIncomplete('Should be converted to queue config v2.');
         $this->objectManager = \Magento\TestFramework\Helper\Bootstrap::getObjectManager();
 
         $configPath = __DIR__ . '/../etc/queue.xml';
@@ -55,7 +54,6 @@ class PublisherConsumerTest extends \PHPUnit\Framework\TestCase
 
     protected function tearDown()
     {
-        $this->markTestIncomplete('Should be converted to queue config v2.');
         $this->consumeMessages('demoConsumerQueueOne', PHP_INT_MAX);
         $this->consumeMessages('demoConsumerQueueTwo', PHP_INT_MAX);
         $this->consumeMessages('demoConsumerQueueThree', PHP_INT_MAX);
